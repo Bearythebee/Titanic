@@ -21,8 +21,8 @@ train = pd.read_csv(r"C:\Users\Admin\Desktop\Kaggle datasets\Titanic\train.csv")
 
 ### Fill missing data with mean
 
-mean = train['Age'].mean()
-train['Age'].fillna(mean,inplace=True)
+median= train['Age'].median()
+train['Age'].fillna(median,inplace=True)
 
 
 ## Drop non-useful columns
@@ -158,7 +158,7 @@ print("----------")
 ## Logistic regression
 print("Logistic regression")
 
-X = train.ix[:,(1,2,3,4,5,6)].values
+X = train.ix[:,(1,2,3,4,5,6,7)].values
 y = train.ix[:,0].values
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = .3, random_state=25)
 
