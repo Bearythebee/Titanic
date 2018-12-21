@@ -41,3 +41,11 @@ Parent = mother, father
 Child = daughter, son, stepdaughter, stepson
 
 Some children travelled only with a nanny, therefore parch=0 for them.
+
+
+### Logistic Regression ###
+score : 0.75119
+### K Neareast Neighbours ###
+score : 0.66985
+### Basic Neural Network ###
+score : 0.75119
