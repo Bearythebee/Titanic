@@ -41,30 +41,3 @@ Parent = mother, father
 Child = daughter, son, stepdaughter, stepson
 
 Some children travelled only with a nanny, therefore parch=0 for them.
-
-
-## **First Attempt** 
-
-On training set.
-
-### **Logistic regression**
-
-y = ['Survived']
-
-X = ['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare',
-       'Embarked']
-       
-**Results**
-
-confusion matrix =
-
-[140  25]
-
-[ 34  69]
-
-             precision    recall  f1-score   support
-
-          0       0.80      0.85      0.83       165
-          1       0.73      0.67      0.70       103
-        avg       0.78      0.78      0.78       268
-
