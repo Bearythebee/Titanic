@@ -9,8 +9,8 @@ from sklearn.model_selection import train_test_split,KFold,GridSearchCV
 from sklearn.metrics import roc_auc_score,confusion_matrix,classification_report
 
 
-train = pd.read_csv("cleaned_train.csv")
-test = pd.read_csv("cleaned_test.csv")
+train = pd.read_csv("../cleaned_train.csv")
+test = pd.read_csv("../cleaned_test.csv")
 
 Id = test['PassengerId']
 
@@ -34,7 +34,10 @@ def train_log_reg(train):
     model = LogisticRegression()
     
     print(" +++ Tuning Hyperparameters +++ ")
-    hyperparameters = dict(C = [0.0001, 0.001, 0.01, 1, 100] , penalty = ['l1', 'l2'])
+    hyperparameters = dict(C = [0.0001, 0.001, 0.01, 1, 100],
+                           penalty = ['l1', 'l2'],
+                           class_weight = [None,'balanced'])
+    
     clf = GridSearchCV(model, hyperparameters, cv=5,scoring='roc_auc',verbose=0)
     logreg = clf.fit(X_train, y_train)
     
